@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/funciones.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>Bob el lenñador</title>
+</head>
+<body>
+    <!-- PANTALLA INICIAL -->
+    <div id="modal_inicio">
+        <p id="jugar" onclick="maestra()">Jugar</p>
+        <p id="controles" onclick="showControles()">Cómo jugar</p>
+        <img id="titleScreen" src="./img/titleScreen.jpg" alt="pantalla_inicio">
+    </div>
+
+    <!-- PANTALLA CONTROLES -->
+    <div id="modal_controles" style="display: none;">
+        <div id="receptaculo">
+            <p> W, S, A, D son para mover al personaje.</p>
+            <br>
+            <p> La barra espaciadora sirve para cortar troncos.</p>
+            <br>
+            <p> Los animales te atacarán y te quitarán los troncos, ve con cuidado!</p>
+            <br>
+            <p> Construye tu casa de ensueño!!!</p>
+            <br>
+            <button id="botonAtras" onclick="showControles()">Atrás</button>
+        </div>
+
+    </div>
+
+    <!-- ELEMENTOS DEL JUEGO -->
+
+    <!--protagonista -->
+    <div><img id="prota" src="./img/move/abajo/bob_quieto.png" alt="bob"></div>
+
+    <!--puntos -->
+    <div id="titulo">
+        <p>Troncos <span id="contador">0</span></p>
+        <p><strong>Objetivo:</strong></p>
+        <p><span id="objetivo">-Consigue 100 troncos!!</span></p>
+    </div>
+
+    <!--casa -->
+    <div id="casa"><img id="imgCasa" src="./img/casas/nada.png" alt="casa"></div>
+
+      <!-- MÚSICA -->
+    <div id="volumen"><img src="./img/mute.png" alt="icono-volumen" onclick="volumen()" id="icono_vol"></div>
+    <audio id="music" controls>  
+        <source src="music/country.mp3" type="audio/mp3">
+            Tu navegador no soporta audio HTML5.
+    </audio>
+   
+    <!--arboles-->
+    <div id="div1"><img id="arbol1" src="./img/arbol3.png" alt="árbol"></div>
+    <div id="div2"><img id="arbol2" src="./img/arbol3.png" alt="árbol"></div>
+    <div id="div3"><img id="arbol3" src="./img/arbol3.png" alt="árbol"></div>
+    <div id="div4"><img id="arbol4" src="./img/arbol3.png" alt="árbol"></div>
+    <div id="div5"><img id="arbol5" src="./img/arbol3.png" alt="árbol"></div>
+
+    <!-- Enemigos -->
+    <div id="zona_bird" >  <!-- style="display: none;" -->
+        <div> <img id="bird" src="./img/enemigos/pajaro/pajaro_izq.gif" alt="pajaro"></div>
+    </div>
+
+    <div id="zona_wolf" style="display: none;">
+        <div> <img id="wolf" src="./img/enemigos/lobo/lobo_izq.gif" alt="lobo"></div>
+    </div>
+
+    <div id="zona_bear" style="display: none;">
+        <div> <img id="bear" src="./img/enemigos/oso/oso_izq.png" alt="oso"></div>
+    </div>
+
+</body>
+</html>
